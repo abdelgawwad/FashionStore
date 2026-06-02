@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-card">
+            <div class="payment-header">
+                <h1>Complete Your Payment</h1>
+                <p class="subtitle">Secure payment powered by Stripe</p>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <div class="summary-item">
+                    <span>Product</span>
+                    <span id="product-name">Premium Plan</span>
+                </div>
+                <div class="summary-item">
+                    <span>Quantity</span>
+                    <span id="quantity">1</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-item total">
+                    <span>Total Amount</span>
+                    <span id="amount-display">$29.99</span>
+                </div>
+            </div>
+
+            <!-- Payment Form -->
+            <form id="payment-form">
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+                </div>
+
+                <!-- Payment Element -->
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <div id="payment-element"></div>
+                </div>
+
+                <!-- Error Message -->
+                <div id="payment-message" class="hidden"></div>
+
+                <!-- Submit Button -->
+                <button id="submit-button" type="submit" class="submit-btn">
+                    <span id="button-text">Pay $29.99</span>
+                    <div id="spinner" class="hidden spinner"></div>
+                </button>
+
+                <!-- Link to return to products -->
+                <p class="back-link">
+                    <a href="/">← Back to Products</a>
+                </p>
+            </form>
+        </div>
+
+        <!-- Security Badge -->
+        <div class="security-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Your payment is secure and encrypted</span>
+        </div>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+</html>
