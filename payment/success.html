@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-card success-card">
+            <div class="success-checkmark">✓</div>
+            <h1>Payment Successful!</h1>
+            <p class="subtitle">Thank you for your purchase</p>
+            
+            <div class="success-message">
+                <p>Your payment has been processed successfully.</p>
+                <p>A confirmation email has been sent to you.</p>
+            </div>
+
+            <div class="order-summary">
+                <div class="summary-item">
+                    <span>Total Paid</span>
+                    <span>$29.99</span>
+                </div>
+                <div class="summary-item">
+                    <span>Status</span>
+                    <span style="color: #10b981;">Completed</span>
+                </div>
+            </div>
+
+            <a href="/" class="btn-primary">Return to Home</a>
+        </div>
+    </div>
+
+    <style>
+        .success-card {
+            text-align: center;
+        }
+
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            margin: 0 auto 20px;
+            animation: scaleIn 0.4s ease-out;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .success-card h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .success-message {
+            background: #f0fdf4;
+            border: 1px solid #dcfce7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+            color: #166534;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</body>
+</html>
